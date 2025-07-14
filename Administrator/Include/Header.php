@@ -1,3 +1,10 @@
+<?php
+include '../../Vendor/connection.php';
+
+session_start();
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,13 +46,16 @@
                         <li class="nav-item">
                             <a class="nav-link" href="../Screen/Criteria.php">Criteria</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../Screen/Contestant.php">Contestant</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Other
                             </a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="#">Settings</a></li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                                <li><a class="dropdown-item" href="../../Backend/logout.php">Logout</a></li>
 
                             </ul>
                         </li>

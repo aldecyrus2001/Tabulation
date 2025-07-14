@@ -1,3 +1,13 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['userID'])) {
+    header("Location: ../../login.php");
+    exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,22 +35,25 @@
                                 Sheets
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="../Screen/Result1.php">Class Dance</a></li>
-                                <li><a class="dropdown-item" href="../Screen/Result2.php">Dance Battle</a></li>
+                                <li><a class="dropdown-item" href="../Screen/Sheet1.php">Class Dance</a></li>
+                                <li><a class="dropdown-item" href="../Screen/Sheet2.php">Dance Battle</a></li>
                             </ul>
                         </li>
-                        
+
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Other
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                                <li><a class="dropdown-item" href="../../Backend/logout.php">Logout</a></li>
 
                             </ul>
                         </li>
 
                     </ul>
+                    <label for="" class="pe-4">
+                        <?php echo $_SESSION['firstname'] . ' ' . $_SESSION['lastname']; ?>
+                    </label>
 
                 </div>
             </div>
