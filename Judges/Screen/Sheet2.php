@@ -83,7 +83,7 @@ $hasScored = $scoreData['total'] > 0;
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-                <form method="POST" action="../../Backend/add-score.php" class="d-flex flex-column gap-3">
+                <form method="POST" action="../../Backend/add-score-dance.php" class="d-flex flex-column gap-3">
                     <input type="hidden" name="contestant_id" id="contestant_id">
 
                     <?php foreach ($criteriaList as $crit): ?>
@@ -93,7 +93,9 @@ $hasScored = $scoreData['total'] > 0;
                                 class="ps-2 w-100 form-control"
                                 name="criteria[<?= $crit['criteriaID'] ?>]"
                                 placeholder="<?= htmlspecialchars($crit['name']) ?>"
-                                min="0" max="100"
+                                min="0"
+                                max="<?= $crit['weight'] ?>"
+                                data-weight="<?= $crit['weight'] ?>"
                                 required>
                         </div>
                     <?php endforeach; ?>
@@ -105,9 +107,34 @@ $hasScored = $scoreData['total'] > 0;
                 </form>
 
             </div>
-            
+
         </div>
     </div>
 </div>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+        const inputs = this.querySelectorAll('input[type="number"]');
+        for (const input of inputs) {
+            const weight = parseFloat(input.dataset.weight);
+            const value = parseFloat(input.value);
+
+            if (value > weight) {
+                e.preventDefault(); // Stop form submission
+                alert(`Score for "${input.placeholder}" exceeds its weight (${weight}%). Please adjust.`);
+                input.focus();
+                return false;
+            }
+        }
+    });
+
+    const sheetModal = document.getElementById('sheet');
+    sheetModal.addEventListener('show.bs.modal', function(event) {
+        const button = event.relatedTarget;
+        const contestantId = button.getAttribute('data-contestant-id');
+        const input = sheetModal.querySelector('#contestant_id');
+        input.value = contestantId;
+    });
+</script>
 
 <?php include '../Include/Footer.php' ?>
