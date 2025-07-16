@@ -29,7 +29,7 @@ if ($result->num_rows === 1) {
         if ($user['role'] === 'administrator') {
             header("Location: ../Administrator/Screen/Home.php");
         } else if ($user['role'] === 'user') {
-            header("Location: ../Judges/Screen/Sheet1.php");
+            header("Location: ../Judges/Screen/Sheet1v2.php");
         } else {
             echo "Unknown role.";
         }

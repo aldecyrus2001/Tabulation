@@ -43,6 +43,8 @@ if (!isset($_SESSION['userID'])) {
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="../Screen/Result1.php">Class Dance</a></li>
                                 <li><a class="dropdown-item" href="../Screen/Result2.php">Dance Battle</a></li>
+                                <li><a class="dropdown-item" href="../Screen/Result1v2.php">Class Dance v2.0</a></li>
+                                <li><a class="dropdown-item" href="../Screen/Result2v2.php">Dance Battle v2.0</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
@@ -62,7 +64,6 @@ if (!isset($_SESSION['userID'])) {
                                 <li><a class="dropdown-item" href="../../Backend/logout.php">Logout</a></li>
                             </ul>
                         </li>
-
                     </ul>
 
                 </div>

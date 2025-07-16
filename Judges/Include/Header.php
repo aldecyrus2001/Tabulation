@@ -35,8 +35,10 @@ if (!isset($_SESSION['userID'])) {
                                 Sheets
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="../Screen/Sheet1.php">Class Dance</a></li>
-                                <li><a class="dropdown-item" href="../Screen/Sheet2.php">Dance Battle</a></li>
+                                <!-- <li><a class="dropdown-item" href="../Screen/Sheet1.php">Class Dance</a></li>
+                                <li><a class="dropdown-item" href="../Screen/Sheet2.php">Dance Battle</a></li> -->
+                                <li><a class="dropdown-item" href="../Screen/Sheet1v2.php">Class Dance v2.0</a></li>
+                                <li><a class="dropdown-item" href="../Screen/Sheet2v2.php">Dance Battle v2.0</a></li>
                             </ul>
                         </li>
 
