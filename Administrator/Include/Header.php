@@ -3,6 +3,11 @@ include '../../Vendor/connection.php';
 
 session_start();
 
+if (!isset($_SESSION['userID'])) {
+    header("Location: ../../login.php");
+    exit;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -54,9 +59,7 @@ session_start();
                                 Other
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="#">Settings</a></li>
                                 <li><a class="dropdown-item" href="../../Backend/logout.php">Logout</a></li>
-
                             </ul>
                         </li>
 
@@ -66,3 +69,4 @@ session_start();
             </div>
         </nav>
     </div>
+    <img src="../../Assets/Logo.png" class="logo" alt="" style="position:fixed; z-index: -1; top:50%; left:50%;transform: translate(-50%, -50%); opacity: 5%; width:500px;">

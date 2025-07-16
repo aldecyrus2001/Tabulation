@@ -59,3 +59,4 @@ if (!isset($_SESSION['userID'])) {
             </div>
         </nav>
     </div>
+    <img src="../../Assets/Logo.png" class="logo" alt="" style="position:fixed; z-index: -1; top:50%; left:50%;transform: translate(-50%, -50%); opacity: 5%; width:500px;">

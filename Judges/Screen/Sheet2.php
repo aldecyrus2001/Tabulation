@@ -37,7 +37,7 @@ $hasScored = $scoreData['total'] > 0;
         <table class="table table-striped border">
             <thead class="text-center">
                 <tr>
-                    <th scope="col">Candidate</th>
+                    <th scope="col">Contestant</th>
                     <th scope="col">Status</th>
                     <th scope="col">Actions</th>
                 </tr>
